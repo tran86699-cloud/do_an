@@ -1,0 +1,6336 @@
+/* ============================================================================
+
+
+
+
+
+   RASPBOT V2 - FORCE 3-COLUMN LAYOUT (NO RESPONSIVE)
+
+
+
+
+
+   ============================================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== RESET & BASE ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+
+
+
+
+
+    margin: 0;
+
+
+
+
+
+    padding: 0;
+
+
+
+
+
+    box-sizing: border-box;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    height: 100vh;
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+
+
+
+
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
+
+
+
+
+
+    color: #e2e8f0;
+
+
+
+
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+
+
+    font-size: 14px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== HEADER ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header {
+
+
+
+
+
+    background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    padding: 20px;
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+
+
+
+
+    border-bottom: 3px solid #0284c7;
+
+
+
+
+
+    height: 90px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header h1 {
+
+
+
+
+
+    font-size: 28px;
+
+
+
+
+
+    margin-bottom: 5px;
+
+
+
+
+
+    font-weight: 600;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header p {
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    opacity: 0.9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== MAIN CONTAINER (FORCE 3 COLUMNS) ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-container {
+
+
+
+
+
+    display: grid;
+
+
+
+
+
+    grid-template-columns: 350px 1fr 300px;
+
+
+
+
+
+    gap: 15px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+    height: calc(100vh - 90px);
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== PANELS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel {
+
+
+
+
+
+    background: #1a1f35;
+
+
+
+
+
+    border: 2px solid #334155;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    overflow-y: auto;
+
+
+
+
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel h2 {
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+    text-transform: uppercase;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    border-bottom: 2px solid #0ea5e9;
+
+
+
+
+
+    padding-bottom: 10px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel h3 {
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    margin-bottom: 12px;
+
+
+
+
+
+    text-transform: uppercase;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== LEFT PANEL ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.left-panel {
+
+
+
+
+
+    grid-column: 1;
+
+
+
+
+
+    min-width: 350px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== CENTER PANEL ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.center-panel {
+
+
+
+
+
+    grid-column: 2;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    gap: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== RIGHT PANEL ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right-panel {
+
+
+
+
+
+    grid-column: 3;
+
+
+
+
+
+    min-width: 300px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== SCROLLBAR ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+
+
+
+
+
+    width: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar-track {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border-radius: 10px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    border-radius: 10px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar-thumb:hover {
+
+
+
+
+
+    background: #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== MODE TABS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode-tabs {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 10px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn {
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    border: 2px solid #475569;
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.3s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn:hover {
+
+
+
+
+
+    background: #334155;
+
+
+
+
+
+    border-color: #0ea5e9;
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn.active {
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    border-color: #0ea5e9;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== MODE CONTENT ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode-content {
+
+
+
+
+
+    display: block;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode-content.hidden {
+
+
+
+
+
+    display: none;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== BUTTONS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-section {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+
+
+
+
+
+    padding: 12px 15px;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+    text-transform: uppercase;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    justify-content: center;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn:hover {
+
+
+
+
+
+    transform: translateY(-2px);
+
+
+
+
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn:active {
+
+
+
+
+
+    transform: translateY(0);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-forward {
+
+
+
+
+
+    background: #22c55e;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-forward:hover {
+
+
+
+
+
+    background: #16a34a;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-backward {
+
+
+
+
+
+    background: #f59e0b;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-backward:hover {
+
+
+
+
+
+    background: #d97706;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-left {
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-left:hover {
+
+
+
+
+
+    background: #2563eb;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-right {
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-right:hover {
+
+
+
+
+
+    background: #2563eb;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-stop {
+
+
+
+
+
+    background: #ef4444;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-stop:hover {
+
+
+
+
+
+    background: #dc2626;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-rotate {
+
+
+
+
+
+    background: #a855f7;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-rotate:hover {
+
+
+
+
+
+    background: #9333ea;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-auto {
+
+
+
+
+
+    background: #06b6d4;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-auto:hover {
+
+
+
+
+
+    background: #0891b2;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AUTONOMOUS MODE BUTTONS (NEW) ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-mode {
+
+
+
+
+
+    background: #a855f7;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    padding: 12px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    justify-content: center;
+
+
+
+
+
+    gap: 2px;
+
+
+
+
+
+    text-transform: none;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+    margin-bottom: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-mode:hover {
+
+
+
+
+
+    background: #9333ea;
+
+
+
+
+
+    transform: translateY(-2px);
+
+
+
+
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-mode:active {
+
+
+
+
+
+    transform: translateY(0);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-vision {
+
+
+
+
+
+    background: #a855f7;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    padding: 8px;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+    margin-bottom: 6px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-vision:hover {
+
+
+
+
+
+    background: #9333ea;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-sensor {
+
+
+
+
+
+    background: #06b6d4;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    padding: 8px;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+    margin-bottom: 6px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-sensor:hover {
+
+
+
+
+
+    background: #0891b2;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-clear {
+
+
+
+
+
+    background: #6366f1;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    padding: 12px;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-clear:hover {
+
+
+
+
+
+    background: #4f46e5;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-small {
+
+
+
+
+
+    padding: 8px 12px;
+
+
+
+
+
+    border: 2px solid #475569;
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-small:hover {
+
+
+
+
+
+    background: #334155;
+
+
+
+
+
+    border-color: #0ea5e9;
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-send {
+
+
+
+
+
+    padding: 8px 15px;
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-send:hover {
+
+
+
+
+
+    background: #2563eb;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== ROWS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== CONTROL GROUPS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.control-group {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    margin-bottom: 12px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.control-group label {
+
+
+
+
+
+    display: block;
+
+
+
+
+
+    margin-bottom: 8px;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.control-group input[type="range"] {
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    accent-color: #3b82f6;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== KEYBOARD GUIDE ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.keyboard-guide {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    color: #94a3b8;
+
+
+
+
+
+    line-height: 1.5;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.keyboard-guide strong {
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    display: block;
+
+
+
+
+
+    margin-bottom: 5px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.keyboard-guide p {
+
+
+
+
+
+    margin: 2px 0;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== CAMERA BOX ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.camera-box {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 2px solid #0ea5e9;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    justify-content: center;
+
+
+
+
+
+    height: 400px;
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+    flex-shrink: 0;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.camera-placeholder {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    justify-content: center;
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+    background: #1a1f35;
+
+
+
+
+
+    color: #64748b;
+
+
+
+
+
+    font-size: 18px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#camera-feed {
+
+
+
+
+
+    max-width: 100%;
+
+
+
+
+
+    max-height: 100%;
+
+
+
+
+
+    object-fit: contain;
+
+
+
+
+
+    display: block;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.camera-info {
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+    bottom: 10px;
+
+
+
+
+
+    right: 10px;
+
+
+
+
+
+    background: rgba(0, 0, 0, 0.7);
+
+
+
+
+
+    padding: 8px 12px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    font-size: 11px;
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.camera-info span {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 4px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== CHAT BOX ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chat-box {
+
+
+
+
+
+    background: #1a1f35;
+
+
+
+
+
+    border: 2px solid #6366f1;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    height: 250px;
+
+
+
+
+
+    flex-shrink: 0;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chat-box h3 {
+
+
+
+
+
+    margin: 0 0 10px 0;
+
+
+
+
+
+    color: #6366f1;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.messages {
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+    overflow-y: auto;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+    margin-bottom: 10px;
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.msg {
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    line-height: 1.4;
+
+
+
+
+
+    word-wrap: break-word;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.msg.user {
+
+
+
+
+
+    background: #3b82f6;
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    margin-left: auto;
+
+
+
+
+
+    max-width: 80%;
+
+
+
+
+
+    text-align: right;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.msg.bot {
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    margin-right: auto;
+
+
+
+
+
+    max-width: 80%;
+
+
+
+
+
+    border-left: 3px solid #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-group {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-group input {
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    color: #e2e8f0;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-group input:focus {
+
+
+
+
+
+    outline: none;
+
+
+
+
+
+    border-color: #3b82f6;
+
+
+
+
+
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-group input::placeholder {
+
+
+
+
+
+    color: #64748b;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== STATUS GROUPS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-group {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+    padding: 12px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    margin-bottom: 12px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-group h3 {
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    margin: 0 0 10px 0;
+
+
+
+
+
+    text-transform: uppercase;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-item {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    justify-content: space-between;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    padding: 6px 0;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    border-bottom: 1px solid #334155;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-item:last-child {
+
+
+
+
+
+    border-bottom: none;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-item span {
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-item span:first-child {
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-item .dot {
+
+
+
+
+
+    display: inline-block;
+
+
+
+
+
+    width: 8px;
+
+
+
+
+
+    height: 8px;
+
+
+
+
+
+    border-radius: 50%;
+
+
+
+
+
+    margin-left: 5px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dot.online {
+
+
+
+
+
+    background: #22c55e;
+
+
+
+
+
+    box-shadow: 0 0 6px #22c55e;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dot.offline {
+
+
+
+
+
+    background: #ef4444;
+
+
+
+
+
+    box-shadow: 0 0 6px #ef4444;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== STATUS BOX ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-box {
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    border: 1px solid #475569;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    margin: 10px 0;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== DISTANCE GAUGE (NEW) ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dist-bar {
+
+
+
+
+
+    background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e);
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+    width: 0%;
+
+
+
+
+
+    transition: width 0.3s ease-out;
+
+
+
+
+
+    border-radius: 2px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dist-result {
+
+
+
+
+
+    font-size: 32px;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dist-status {
+
+
+
+
+
+    display: inline-block;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== LOADING ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loading {
+
+
+
+
+
+    display: inline-block;
+
+
+
+
+
+    width: 12px;
+
+
+
+
+
+    height: 12px;
+
+
+
+
+
+    border: 2px solid #3b82f6;
+
+
+
+
+
+    border-top: 2px solid transparent;
+
+
+
+
+
+    border-radius: 50%;
+
+
+
+
+
+    animation: spin 0.8s linear infinite;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes spin {
+
+
+
+
+
+    0% { transform: rotate(0deg); }
+
+
+
+
+
+    100% { transform: rotate(360deg); }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== NO RESPONSIVE - ALWAYS 3 COLUMNS ==================== */
+
+
+
+
+
+/* This forces the layout to always stay in 3 columns, no matter screen size */
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 9999px) {
+
+
+
+
+
+    .main-container {
+
+
+
+
+
+        grid-template-columns: 350px 1fr 300px !important;
+
+
+
+
+
+        height: calc(100vh - 90px) !important;
+
+
+
+
+
+        overflow: hidden !important;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .left-panel {
+
+
+
+
+
+        grid-column: 1 !important;
+
+
+
+
+
+        min-width: 350px !important;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .center-panel {
+
+
+
+
+
+        grid-column: 2 !important;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .right-panel {
+
+
+
+
+
+        grid-column: 3 !important;
+
+
+
+
+
+        min-width: 300px !important;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .camera-box {
+
+
+
+
+
+        height: 400px !important;
+
+
+
+
+
+        flex-shrink: 0 !important;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .chat-box {
+
+
+
+
+
+        height: 250px !important;
+
+
+
+
+
+        flex-shrink: 0 !important;
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+/* ============================================================================
+
+
+
+
+
+   MODE 3 - AI-ASSISTED STYLES
+
+
+
+
+
+   Added: 2025-12-28
+
+
+
+
+
+   ============================================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AI CHAT CONTAINER ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-chat-container {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    border: 2px solid #a855f7;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AI MESSAGES ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-messages {
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+    overflow-y: auto;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+    gap: 10px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    background: #1a1f35;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-msg {
+
+
+
+
+
+    padding: 12px 15px;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    line-height: 1.5;
+
+
+
+
+
+    max-width: 85%;
+
+
+
+
+
+    word-wrap: break-word;
+
+
+
+
+
+    animation: fadeIn 0.3s ease;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+
+
+
+
+
+    from {
+
+
+
+
+
+        opacity: 0;
+
+
+
+
+
+        transform: translateY(10px);
+
+
+
+
+
+    }
+
+
+
+
+
+    to {
+
+
+
+
+
+        opacity: 1;
+
+
+
+
+
+        transform: translateY(0);
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-msg.user {
+
+
+
+
+
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    margin-left: auto;
+
+
+
+
+
+    text-align: right;
+
+
+
+
+
+    border-bottom-right-radius: 2px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-msg.bot {
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    color: #e2e8f0;
+
+
+
+
+
+    margin-right: auto;
+
+
+
+
+
+    border-left: 4px solid #0ea5e9;
+
+
+
+
+
+    border-bottom-left-radius: 2px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-msg.system {
+
+
+
+
+
+    background: #fef3c7;
+
+
+
+
+
+    color: #78350f;
+
+
+
+
+
+    margin: 0 auto;
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+    font-size: 11px;
+
+
+
+
+
+    padding: 8px 12px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    max-width: 100%;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AI INPUT GROUP ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-input-group {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    gap: 10px;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-input-group input {
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+    padding: 12px 15px;
+
+
+
+
+
+    background: #1a1f35;
+
+
+
+
+
+    border: 2px solid #475569;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    color: #e2e8f0;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    transition: all 0.3s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-input-group input:focus {
+
+
+
+
+
+    outline: none;
+
+
+
+
+
+    border-color: #a855f7;
+
+
+
+
+
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-input-group input::placeholder {
+
+
+
+
+
+    color: #64748b;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-input-group input:disabled {
+
+
+
+
+
+    opacity: 0.5;
+
+
+
+
+
+    cursor: not-allowed;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AI SEND BUTTON ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-send-btn {
+
+
+
+
+
+    padding: 12px 20px;
+
+
+
+
+
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+
+
+
+
+
+    color: white;
+
+
+
+
+
+    border: none;
+
+
+
+
+
+    border-radius: 6px;
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+    font-size: 13px;
+
+
+
+
+
+    transition: all 0.2s;
+
+
+
+
+
+    white-space: nowrap;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-send-btn:hover:not(:disabled) {
+
+
+
+
+
+    transform: translateY(-2px);
+
+
+
+
+
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-send-btn:active:not(:disabled) {
+
+
+
+
+
+    transform: translateY(0);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-send-btn:disabled {
+
+
+
+
+
+    background: #64748b;
+
+
+
+
+
+    cursor: not-allowed;
+
+
+
+
+
+    transform: none;
+
+
+
+
+
+    opacity: 0.6;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== AI STATUS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-status {
+
+
+
+
+
+    font-size: 11px;
+
+
+
+
+
+    color: #94a3b8;
+
+
+
+
+
+    margin-bottom: 10px;
+
+
+
+
+
+    padding: 8px 12px;
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-status .status-dot {
+
+
+
+
+
+    width: 8px;
+
+
+
+
+
+    height: 8px;
+
+
+
+
+
+    border-radius: 50%;
+
+
+
+
+
+    background: #ef4444;
+
+
+
+
+
+    animation: pulse 2s infinite;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-status.connected .status-dot {
+
+
+
+
+
+    background: #22c55e;
+
+
+
+
+
+    animation: none;
+
+
+
+
+
+    box-shadow: 0 0 6px #22c55e;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== MODE 3 INFO PANEL ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-info {
+
+
+
+
+
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+
+
+
+
+
+    border: 2px solid #a855f7;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-info h3 {
+
+
+
+
+
+    color: #a855f7;
+
+
+
+
+
+    font-size: 14px;
+
+
+
+
+
+    margin-bottom: 10px;
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    align-items: center;
+
+
+
+
+
+    gap: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-info p {
+
+
+
+
+
+    font-size: 12px;
+
+
+
+
+
+    color: #cbd5e1;
+
+
+
+
+
+    line-height: 1.5;
+
+
+
+
+
+    margin-bottom: 8px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-examples {
+
+
+
+
+
+    background: #0f172a;
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+    border-radius: 4px;
+
+
+
+
+
+    margin-top: 10px;
+
+
+
+
+
+    border: 1px solid #334155;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-examples strong {
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+    font-size: 11px;
+
+
+
+
+
+    display: block;
+
+
+
+
+
+    margin-bottom: 6px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mode3-examples code {
+
+
+
+
+
+    display: block;
+
+
+
+
+
+    padding: 6px 8px;
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    border-left: 3px solid #a855f7;
+
+
+
+
+
+    border-radius: 2px;
+
+
+
+
+
+    font-size: 11px;
+
+
+
+
+
+    color: #e2e8f0;
+
+
+
+
+
+    margin-bottom: 4px;
+
+
+
+
+
+    font-family: 'Courier New', monospace;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== LINE SENSORS PANEL (FIXED) ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.line-sensors-panel {
+
+
+
+
+
+    background: #1e293b;
+
+
+
+
+
+    border-radius: 8px;
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.line-sensors-panel h3 {
+
+
+
+
+
+    margin-bottom: 10px;
+
+
+
+
+
+    color: #0ea5e9;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.line-sensors-panel > div {
+
+
+
+
+
+    display: flex;
+
+
+
+
+
+    justify-content: space-around;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sensor-indicator {
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+    flex: 1;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== MODE 3 TAB BUTTON ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn:nth-child(3) {
+
+
+
+
+
+    /* AI tab special styling */
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn:nth-child(3).active {
+
+
+
+
+
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+
+
+
+
+
+    border-color: #a855f7;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab-btn:nth-child(3):hover:not(.active) {
+
+
+
+
+
+    border-color: #a855f7;
+
+
+
+
+
+    color: #a855f7;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 9999px) {
+
+
+
+
+
+    .ai-chat-container {
+
+
+
+
+
+        min-height: 300px;
+
+
+
+
+
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    .ai-messages {
+
+
+
+
+
+        min-height: 200px;
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+

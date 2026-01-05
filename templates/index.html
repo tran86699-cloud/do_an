@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+
+
+<html lang="vi">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Raspbot V2 - AI Assistant</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+
+    <header class="header">
+
+
+        <h1>ðŸ¤– RASPBOT V2 - AI ASSISTANT</h1>
+
+
+        <p>AI-Powered Robot with Natural Language Control</p>
+
+
+    </header>
+
+
+
+
+
+
+    <!-- MAIN CONTAINER - 3 COLUMNS -->
+
+
+    <div class="main-container">
+
+
+       
+
+
+        <!-- ============== LEFT PANEL: CONTROLS ============== -->
+
+
+        <div class="panel left-panel">
+
+
+            <h2>ðŸŽ® CONTROLS</h2>
+
+
+           
+
+
+            <!-- MODE TABS -->
+
+
+            <div class="mode-tabs">
+
+
+                <button class="tab-btn active" onclick="setMode('manual')">Manual</button>
+
+
+                <button class="tab-btn" onclick="setMode('auto')">Autonomous</button>
+
+
+                <button class="tab-btn" onclick="setMode('ai')">ðŸ§  AI</button>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- MANUAL MODE -->
+
+
+            <div id="manual-mode" class="mode-content">
+
+
+                <h3>Manual Control</h3>
+
+
+               
+
+
+                <!-- MOVEMENT BUTTONS -->
+
+
+                <div class="button-section">
+
+
+                    <button class="btn btn-forward" onclick="cmd('forward')">â¬†ï¸ FORWARD</button>
+
+
+                   
+
+
+                    <div class="row">
+
+
+                        <button class="btn btn-left" onclick="cmd('left')">â¬…ï¸ LEFT</button>
+
+
+                        <button class="btn btn-stop" onclick="cmd('stop')">â¹ STOP</button>
+
+
+                        <button class="btn btn-right" onclick="cmd('right')">âž¡ï¸ RIGHT</button>
+
+
+                    </div>
+
+
+                   
+
+
+                    <button class="btn btn-backward" onclick="cmd('backward')">â¬‡ï¸ BACKWARD</button>
+
+
+                   
+
+
+                    <div class="row">
+
+
+                        <button class="btn btn-rotate" onclick="cmd('rotate_left')">â†º ROT L</button>
+
+
+                        <button class="btn btn-rotate" onclick="cmd('rotate_right')">â†» ROT R</button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- SPEED -->
+
+
+                <div class="control-group">
+
+
+                    <label>Speed: <span id="speed-val">150</span></label>
+
+
+                    <input type="range" min="50" max="255" value="150" oninput="setSpeed(this.value)">
+
+
+                </div>
+
+
+
+
+
+
+                <!-- CAMERA CONTROL -->
+
+
+                <div class="control-group">
+
+
+                    <label>Camera Pan: <span id="pan-val">90Â°</span></label>
+
+
+                    <div class="row">
+
+
+                        <button class="btn-small" onclick="panCam(-10, 0)">â—€</button>
+
+
+                        <button class="btn-small" onclick="panCam(0, 0)">Reset</button>
+
+
+                        <button class="btn-small" onclick="panCam(10, 0)">â–¶</button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="control-group">
+
+
+                    <label>Camera Tilt: <span id="tilt-val">45°</span></label>
+
+
+                    <div class="row">
+
+
+                        <button class="btn-small" onclick="panCam(0, 10)">â–²</button>
+
+
+                        <button class="btn-small" onclick="panCam(0, 0)">Reset</button>
+
+
+                        <button class="btn-small" onclick="panCam(0, -10)">â–¼</button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- KEYBOARD GUIDE -->
+
+
+                <div class="keyboard-guide">
+
+
+                    <strong>âŒ¨ï¸ Keyboard:</strong>
+
+
+                    <p>W/A/S/D = Move | Q/E = Rotate | SPACE = Stop</p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- AUTONOMOUS MODE -->
+
+
+            <div id="auto-mode" class="mode-content hidden">
+
+
+                <h3>ðŸ¤– Autonomous Modes</h3>
+
+
+               
+
+
+                <div class="button-section">
+
+
+                    <button class="btn btn-mode" onclick="startFindFace()" style="background:#a855f7;">
+
+
+                        ðŸ”Ž FIND FACE<br><small style="font-size:10px;">Auto search & track</small>
+
+
+                    </button>
+
+
+
+
+
+
+                    <button class="btn btn-mode" onclick="startAutoObstacle()" style="background:#06b6d4;">
+
+
+                        ðŸš¨ AUTO OBSTACLE<br><small style="font-size:10px;">Auto navigate</small>
+
+
+                    </button>
+
+
+
+
+
+
+                    <button class="btn btn-mode" onclick="startFaceTracking()" style="background:#22c55e;">
+
+
+                        ðŸ‘¤ FACE TRACKING<br><small style="font-size:10px;">Traditional tracking</small>
+
+
+                    </button>
+
+
+
+
+
+
+                    <button class="btn btn-stop" onclick="stopAutonomous()">
+
+
+                        â¹ï¸ STOP ALL
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- AI MODE -->
+
+
+            <div id="ai-mode" class="mode-content hidden">
+
+
+                <h3>ðŸ§  AI-Assisted Control</h3>
+
+
+               
+
+
+                <!-- MODE 3 Info -->
+
+
+                <div class="mode3-info">
+
+
+                    <h3>ðŸ¤– AI Assistant</h3>
+
+
+                    <p>Chat with your robot! I can answer questions AND execute commands.</p>
+
+
+                   
+
+
+                    <div class="mode3-examples">
+
+
+                        <strong>ðŸ’¡ Try asking:</strong>
+
+
+                        <code>"What can you do?"</code>
+
+
+                        <code>"Go forward"</code>
+
+
+                        <code>"Find a face"</code>
+
+
+                        <code>"What's the distance?"</code>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- PC Status -->
+
+
+                <div class="ai-status" id="ai-connection-status">
+
+
+                    <div class="status-dot"></div>
+
+
+                    <span>PC Server: Checking...</span>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Quick Actions -->
+
+
+                <div class="button-section">
+
+
+                    <button class="btn btn-mode" onclick="aiQuickCommand('go forward')" style="background:#22c55e;">
+
+
+                        â¬†ï¸ GO FORWARD
+
+
+                    </button>
+
+
+                    <button class="btn btn-mode" onclick="aiQuickCommand('find face')" style="background:#a855f7;">
+
+
+                        ðŸ” FIND FACE
+
+
+                    </button>
+
+
+                    <button class="btn btn-stop" onclick="aiQuickCommand('stop')">
+
+
+                        â¹ STOP
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <!-- ============== CENTER PANEL: CAMERA & AI CHAT ============== -->
+
+
+        <div class="panel center-panel">
+
+
+            <!-- CAMERA -->
+
+
+            <div class="camera-box">
+
+
+                <img id="camera-feed" src="" alt="Camera Feed" style="width:100%; display:none;">
+
+
+                <div id="camera-placeholder" class="camera-placeholder">
+
+
+                    ðŸ“· Camera Feed<br><small>Connecting...</small>
+
+
+                </div>
+
+
+                <div class="camera-info">
+
+
+                    <span>FPS: <strong id="fps">0</strong></span>
+
+
+                    <span>Pan: <strong id="cam-pan">90°</strong></span>
+
+
+                    <span>Tilt: <strong id="cam-tilt">45°</strong></span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- AI CHAT - ONLY ONE! -->
+
+
+            <div class="ai-chat-container" style="height: 250px; flex-shrink: 0;">
+
+
+                <h3 style="color: #a855f7; margin-bottom: 10px;">ðŸ’¬ AI Assistant</h3>
+
+
+               
+
+
+                <div class="ai-messages" id="ai-messages">
+
+
+                    <div class="ai-msg system">
+
+
+                        ðŸ§  AI Assistant Active
+
+
+                    </div>
+
+
+                    <div class="ai-msg bot">
+
+
+                        ðŸ‘‹ Hello! I'm your robot AI assistant. You can ask me questions or give me commands! Try asking "What can you do?"
+
+
+                    </div>
+
+
+                </div>
+
+
+               
+
+
+                <div class="ai-input-group">
+
+
+                    <input
+
+
+                        type="text"
+
+
+                        id="ai-input"
+
+
+                        placeholder="Ask me anything or give a command..."
+
+
+                        onkeypress="aiEnterCommand(event)"
+
+
+                    >
+
+
+                    <button class="ai-send-btn" onclick="sendAICommand()">
+
+
+                        Send
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <!-- ============== RIGHT PANEL: STATUS & SENSORS ============== -->
+
+
+        <div class="panel right-panel">
+
+
+            <h2>ðŸ“Š STATUS</h2>
+
+
+           
+
+
+            <!-- CONNECTION STATUS -->
+
+
+            <div class="status-panel">
+
+
+                <div class="status-item">
+
+
+                    <span>Connection:</span>
+
+
+                    <span id="sse-status"> Offline</span>
+
+
+                </div>
+
+
+                <div class="status-item">
+
+
+                    <span>Mode:</span>
+
+
+                    <span id="robot-mode" style="color: #6b7280; font-weight: bold;">IDLE</span>
+
+
+                </div>
+
+
+                <div class="status-item" style="flex-direction: column; align-items: flex-start;">
+
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 5px;">
+
+
+                        <span>Speed:</span>
+
+
+                        <span id="speed-value">0</span>
+
+
+                    </div>
+
+
+                    <div class="speed-bar-container" style="width: 100%;">
+
+
+                        <div id="speed-bar"></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="status-item">
+
+
+                    <span>Last Cmd:</span>
+
+
+                    <span id="last-command" style="color: #94a3b8;">none</span>
+
+
+                </div>
+
+
+                <div class="status-item" style="border-top: 1px solid #334155; padding-top: 10px; margin-top: 10px; flex-direction: column; align-items: flex-start;">
+
+
+                    <div style="font-size: 0.9em; color: #94a3b8; margin-bottom: 5px;">Camera Position</div>
+
+
+                    <div id="pan-value" style="font-size: 0.85em;">Pan: 90Â°</div>
+
+
+                    <div id="tilt-value" style="font-size: 0.85em;">Tilt: 45Â°</div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- AI SERVER STATUS (only in AI mode) -->
+
+
+            <div id="mode3-status-panel" class="status-panel" style="display:none;">
+
+
+                <h3 style="color: #a855f7; font-size: 13px; margin-bottom: 10px;">ðŸ§  AI SERVER</h3>
+
+
+                <div class="status-item">
+
+
+                    <span>PC Server:</span>
+
+
+                    <span id="pc-server-status">-</span>
+
+
+                </div>
+
+
+                <div class="status-item">
+
+
+                    <span>AI Model:</span>
+
+
+                    <span id="ai-model-name" style="font-size: 11px;">-</span>
+
+
+                </div>
+
+
+                <div class="status-item">
+
+
+                    <span>Commands:</span>
+
+
+                    <span id="ai-commands-count">0</span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Line Sensors -->
+
+
+            <div class="line-sensors-panel">
+
+
+                <h3 style="margin-bottom: 10px;">Line Sensors</h3>
+
+
+                <div style="display: flex; justify-content: space-around;">
+
+
+                    <div class="sensor-indicator">
+
+
+                        <div id="line-sensor-0" class="sensor-dot"></div>
+
+
+                        <div>L1</div>
+
+
+                    </div>
+
+
+                    <div class="sensor-indicator">
+
+
+                        <div id="line-sensor-1" class="sensor-dot"></div>
+
+
+                        <div>L2</div>
+
+
+                    </div>
+
+
+                    <div class="sensor-indicator">
+
+
+                        <div id="line-sensor-2" class="sensor-dot"></div>
+
+
+                        <div>R1</div>
+
+
+                    </div>
+
+
+                    <div class="sensor-indicator">
+
+
+                        <div id="line-sensor-3" class="sensor-dot"></div>
+
+
+                        <div>R2</div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- DISTANCE GAUGE -->
+
+
+            <div class="status-group">
+
+
+                <h3>ðŸ“ Distance (Real-time)</h3>
+
+
+                <div style="background:#0f172a; padding:15px; border-radius:4px; text-align:center;">
+
+
+                    <div style="font-size:32px; font-weight:bold; color:#0ea5e9; margin-bottom:10px;">
+
+
+                        <span id="dist-result">-</span><span style="font-size:20px;">cm</span>
+
+
+                    </div>
+
+
+                    <div style="background:#1e293b; border-radius:4px; overflow:hidden; height:20px; margin-bottom:8px;">
+
+
+                        <div id="dist-bar" style="background:linear-gradient(90deg, #ef4444, #f59e0b, #22c55e); height:100%; width:0%; transition:width 0.3s;"></div>
+
+
+                    </div>
+
+
+                    <div style="font-size:11px; color:#64748b; display:flex; justify-content:space-between;">
+
+
+                        <span>0cm</span>
+
+
+                        <span>100cm</span>
+
+
+                    </div>
+
+
+                    <div style="margin-top:10px; padding:8px; background:#1e293b; border-radius:4px; font-size:12px;">
+
+
+                        <span id="dist-status">â³ Connecting...</span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- ============== MANUAL CONTROLS (BUZZER & LED) ============== -->
+
+
+            <div class="status-group" style="margin-top: 20px;">
+
+
+                <h3>ðŸŽ›ï¸ Manual Controls</h3>
+
+
+               
+
+
+                <!-- Buzzer Control -->
+
+
+                <div style="margin-bottom: 15px;">
+
+
+                    <button class="btn" onclick="triggerBuzzer()"
+
+
+                            style="width: 100%; background: #ef4444; color: white; padding: 12px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; font-size: 14px;">
+
+
+                        ðŸ”Š BUZZER
+
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- LED Toggle -->
+
+
+                <div style="margin-bottom: 15px;">
+
+
+                    <button id="led-toggle" onclick="toggleLED()"
+
+
+                            style="width: 100%; background: #fbbf24; color: #1e293b; padding: 12px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; font-size: 14px;">
+
+
+                        ðŸ’¡ LED OFF
+
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Color Picker -->
+
+
+                <div style="background: #1e293b; padding: 12px; border-radius: 6px; margin-bottom: 10px;">
+
+
+                    <label style="display: block; margin-bottom: 8px; font-size: 12px; color: #94a3b8; font-weight: bold;">LED Color:</label>
+
+
+                    <div style="display: flex; gap: 8px; align-items: center;">
+
+
+                        <input type="color" id="led-color-picker" value="#FF0000"
+
+
+                               style="width: 50px; height: 35px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: none;">
+
+
+                        <button onclick="applyLEDColor()"
+
+
+                                style="flex: 1; padding: 8px 12px; background: #0ea5e9; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;">
+
+
+                            Apply
+
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Color Presets -->
+
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+
+
+                    <button onclick="setLEDColor('RED')" title="Red"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #ef4444;"></button>
+
+
+                    <button onclick="setLEDColor('GREEN')" title="Green"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #22c55e;"></button>
+
+
+                    <button onclick="setLEDColor('BLUE')" title="Blue"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #3b82f6;"></button>
+
+
+                    <button onclick="setLEDColor('YELLOW')" title="Yellow"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #eab308;"></button>
+
+
+                    <button onclick="setLEDColor('MAGENTA')" title="Magenta"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #ec4899;"></button>
+
+
+                    <button onclick="setLEDColor('CYAN')" title="Cyan"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #06b6d4;"></button>
+
+
+                    <button onclick="setLEDColor('WHITE')" title="White"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #f1f5f9;"></button>
+
+
+                    <button onclick="setLEDColor('ORANGE')" title="Orange"
+
+
+                            style="height: 32px; border: 2px solid #334155; border-radius: 4px; cursor: pointer; background: #f97316;"></button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
