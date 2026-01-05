@@ -1,0 +1,61 @@
+# config/autonomous_config.py
+"""
+Autonomous Configuration - Line following & Obstacle avoidance
+All hardcoded values from autonomous modules
+"""
+
+# ============================================================================
+# LINE FOLLOWING
+# ============================================================================
+
+# Default Parameters
+AUTONOMOUS_LINE_FOLLOWING_DURATION = 60          # Duration (seconds)
+AUTONOMOUS_LINE_FOLLOWING_SPEED = 100            # Default speed (0-255)
+
+# Movement Control
+AUTONOMOUS_LINE_FOLLOWING_CONTROL_INTERVAL = 0.1 # Control update interval (seconds)
+AUTONOMOUS_LINE_FOLLOWING_SLEEP = 0.05           # Sleep between readings (seconds)
+
+# Buzzer Alert (when line lost)
+AUTONOMOUS_LINE_FOLLOWING_LOST_BEEP_DURATION = 0.1
+AUTONOMOUS_LINE_FOLLOWING_LOST_BEEP_COUNT = 1
+
+# ============================================================================
+# OBSTACLE AVOIDANCE
+# ============================================================================
+
+# Default Parameters
+AUTONOMOUS_OBSTACLE_AVOIDANCE_DURATION = 60      # Duration (seconds)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_SPEED = 150        # Forward speed (0-255)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_ROTATE_SPEED = 120 # Rotation speed (0-255)
+
+# Movement Timing
+AUTONOMOUS_OBSTACLE_AVOIDANCE_BACKUP_DURATION = 1.0     # Back up time (seconds)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_ROTATE_DURATION = 1.0     # Turn time (seconds)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_SLEEP = 0.1               # Sleep between readings (seconds)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_PAUSE_AFTER_STOP = 0.5    # Pause after stop (seconds)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_PAUSE_AFTER_BACKUP = 0.5  # Pause after backup (seconds)
+
+# Buzzer Alert (obstacle detected)
+AUTONOMOUS_OBSTACLE_AVOIDANCE_ALERT_BEEP_DURATION = 0.2
+AUTONOMOUS_OBSTACLE_AVOIDANCE_ALERT_BEEP_COUNT = 2
+
+# Display Messages
+AUTONOMOUS_DISPLAY_UPDATE_INTERVAL = 0.1         # Display update interval (seconds)
+
+# ============================================================================
+# GENERAL AUTONOMOUS SETTINGS
+# ============================================================================
+
+# Safety
+AUTONOMOUS_ENABLE_DISPLAY = True                 # Show display during autonomy
+AUTONOMOUS_ENABLE_BUZZER = True                  # Enable alerts
+AUTONOMOUS_LOG_ENABLED = True                    # Enable logging
+
+# Control Loop
+AUTONOMOUS_MIN_SLEEP = 0.05                      # Minimum sleep time
+AUTONOMOUS_MAX_SLEEP = 0.5                       # Maximum sleep time
+
+# End of autonomous_config.py
+
+
